@@ -1,0 +1,87 @@
+Todolist
+******************html****************************
+ 1)<button onclick="addtask()">Add</button>
+here the addtask() will be added in the html partt then function defination will be done in 
+js file.
+
+***********************css****************************
+1)main-container{
+    display: flex;
+    justify-content: center; /* Horizontally centers the content */
+    align-items: center; /* Vertically centers the content */
+    height: 100vh; /* Adjust as needed, this makes the container take up the full viewport height */
+    background-color: lightgray;
+}
+
+
+to get the elements to the center this is way we need to add these items to the parent container.
+
+2)container h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+here css will be added to img of h2 so going little deeper.
+
+3)ul li::before{
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-image: url(unchecked.png);
+    background-size: cover;
+    left:8px;
+
+}
+
+here before helps to add the image before a list
+
+4)ul li.checked{
+    text-decoration: line-through;
+
+
+}
+here li.checked tells us that inside li we have checked class.
+
+***********************js************************
+{
+    let li=document.createElement("li");
+
+
+    li.innerHTML=inputboxel.value;
+    listel.appendChild(li);
+    
+
+    let span=document.createElement("span");
+    span.innerHTML="\u00d7";
+    li.appendChild(span);
+}
+
+here all the elements will be created when we write in the search box.
+then as we create the element and then whatever we write in inputboxel.value
+will be appended to the list 
+
+then for span also we create it and then add the image on that string.
+
+5)listel.addEventListener("click",(e)=>{
+    if(e.target.tagName==="LI"){
+        e.target.classList.toggle("checked");
+        saved();
+    }
+
+
+/*In this context, e.target.tagName is used to determine 
+whether the element that was clicked has the tag name "LI" (list item) or "SPAN".
+This is useful for distinguishing between clicks on list items and clicks on spans within list items, as you've shown in your code snippet.*/
+   
+
+6)
+listel.innerHTML=localStorage.getItem("data");
+So, when you execute this code, it fetches the value stored in the localStorage with the key "data" and assigns it as the HTML content inside the selected element (referenced by listel).
+
+7)localStorage.setItem("data",listel.innerHTML);
+stores the content of an HTML element in the user's browser's local storage using the localStorage
+
+here 
+
+

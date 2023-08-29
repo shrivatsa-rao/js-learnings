@@ -1,0 +1,73 @@
+weather-app
+*****************html**********************
+<div class="card">
+        <div class="search">
+            <input type="text" placeholder="enter city name">
+            <button><img src="search.png" alt="some random"></button>
+        </div>
+
+        <div class="error">
+            <p>Invalid data</p>
+        </div>
+
+        <div class="weather">
+            <img src="rain.png" alt="rain" class="weather-icon">
+            <h1 class="temp">22 C</h1>
+            <h2 class="city">New York</h2>
+1) for each tag we can add div tags and each p tag also we can add div tag for image also we can give class
+and for h1 also we can provide class.
+
+****************css**********************************
+
+1) including two class in class
+.humdity, .wind{
+    font-size: 20px;
+    
+}
+
+2) search class has a input tag then  we need add flex:1
+The flex property is shorthand for three individual properties: flex-grow, flex-shrink, and flex-basis. 
+The value flex: 1 specifically sets these three properties.
+This item will grow and shrink equally with other items.
+.search input{
+
+    border: 0;
+    padding: 10px;
+    border-radius: 30px;
+    margin-right: 16px;
+    flex: 1;
+    height: 40px;
+}
+3)
+.card{
+    width: 90%;
+    max-width: 470px;
+    background-color: aqua;
+    margin: 100px auto 0;
+    padding: 50px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+
+}
+each element must contain height,width and padding and margin then it will be perfect.
+
+*********************js******************************
+1)const searchbox=document.querySelector(".search input");
+The code you provided is using JavaScript to select an HTML element with the class "search" and an <input> element within it.
+.style: This accesses the inline styles of the selected element. The style property allows you to manipulate the element's inline CSS styles directly.
+This is a CSS property that controls how an element is displayed. The value can be "block", "inline", "inline-block", "none", and so on.
+
+2)document.querySelector(".humdity").innerHTML=data.main.humidity + "%";
+The code you provided is using JavaScript to select an HTML element with the class "humidity" and then updating its content (innerHTML) with humidity data from an object named data
+.innerHTML: This is a property that allows you to manipulate the HTML content inside an element.
+here data stores the response from api as json then it will be displayed to screen whatever we recieve from the api.
+
+3) if(data.weather[0].main=="Clouds")
+{
+    weather_icon.src="clouds.png";
+}
+data contains a weather json so weather[0] points to clouds then it will add the image.
+
+4)checkweather(searchbox.value);
+here value sends the string value what we enter.
